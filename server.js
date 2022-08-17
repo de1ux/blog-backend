@@ -95,8 +95,14 @@ server.get("/post/:id", async (req, res) => {
 	res.send({ post: await Post.findByPk(req.params.id) });
 });
 
+
+let port = process.env.PORT;
+if (!port) {
+	port = 3001;
+}
+
 //#9 run express API server in background to listen for incoming requests
-server.listen(3001, () => {
+server.listen(port, () => {
 	console.log("Server running.");
 });
 
