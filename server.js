@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 server.use(bodyParser.json());
 const bcrypt = require("bcrypt");
 
-
 const sessions = require("express-session");
 const { db, User, Post } = require("./db/db.js"); //#2, #8 DB setup
 const sequelizeStore = require("connect-session-sequelize")(sessions.Store);
@@ -106,7 +105,7 @@ const createFirstUser = async () => {
 	const users = await User.findAll();
 	if (users.length === 0) {
 		User.create({
-			username: "max",
+			username: "nathan",
 			password: bcrypt.hashSync("supersecret", 10),
 		});
 	}
