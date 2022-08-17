@@ -96,8 +96,10 @@ server.get("/post/:id", async (req, res) => {
 });
 
 
+// if heroku, process.env.PORT will be provided
 let port = process.env.PORT;
 if (!port) {
+	// otherwise, fallback to localhost 3001
 	port = 3001;
 }
 
