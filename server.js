@@ -2,10 +2,10 @@
 const express = require("express");
 const server = express();
 const cors = require("cors");
+const bcrypt = require("bcrypt");
 server.use(cors({ credentials: true, origin: ["http://localhost:3000", "https://de1ux-blog-frontend.herokuapp.com"] }));
 const bodyParser = require("body-parser");
 server.use(bodyParser.json());
-const bcrypt = require("bcrypt");
 
 const sessions = require("express-session");
 const { db, User, Post } = require("./db/db.js"); //#2, #8 DB setup
